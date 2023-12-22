@@ -11,10 +11,10 @@ public class App {
 
 	}
 
-	public void run() {
-		System.out.println("== 명언 앱 실행 ==");
+	public void run() { // 메인클래스에서 run을 실행해서 아래의 메서드 바디 내용을 실행하기 위함 
+		System.out.println("== 명언 앱 실행 =="); // 첫 문장으로 출력됨 
 
-		SystemController systemController = new SystemController();
+		SystemController systemController = new SystemController(); // systemcontroller에 담긴 메서드를 연결해서 
 		WiseSayingController wiseSayingController = new WiseSayingController();
 
 		while (system_status == 1) {
