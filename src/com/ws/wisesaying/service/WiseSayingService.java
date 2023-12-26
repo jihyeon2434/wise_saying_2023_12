@@ -10,7 +10,6 @@ public class WiseSayingService {
 	private WiseSayingRepository wiseSayingRepository;
 
 	public WiseSayingService() {
-
 		wiseSayingRepository = new WiseSayingRepository();
 	}
 
@@ -18,12 +17,11 @@ public class WiseSayingService {
 		return wiseSayingRepository.findAll();
 	}
 
-	public int write(String content, String author) { // content, author 인자와 묶인 번호를 뽑아내기 위해
-
+	public int write(String content, String author) {
 		return wiseSayingRepository.write(content, author);
 	}
 
-	public WiseSaying findById(int id) { ///// content, author 인자와 묶인 번호를 뽑아내기 위해
+	public WiseSaying findById(int id) {
 		return wiseSayingRepository.findById(id);
 	}
 
@@ -32,8 +30,7 @@ public class WiseSayingService {
 	}
 
 	public void modify(WiseSaying wiseSaying, String content, String author) {
-		wiseSayingRepository.modify(wiseSaying, content, author); //// content, author 인자와 묶인 번호를 뽑아내기 위해
-
+		wiseSayingRepository.modify(wiseSaying, content, author);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.ws;
 
+import com.ws.export.controller.ExportController;
 import com.ws.system.controller.SystemController;
 import com.ws.wiseSaying.controller.WiseSayingController;
 
@@ -11,11 +12,12 @@ public class App {
 
 	}
 
-	public void run() { // 메인클래스에서 run을 실행해서 아래의 메서드 바디 내용을 실행하기 위함 
-		System.out.println("== 명언 앱 실행 =="); // 첫 문장으로 출력됨 
+	public void run() {
+		System.out.println("== 명언 앱 실행 ==");
 
-		SystemController systemController = new SystemController(); // systemcontroller에 담긴 메서드를 연결해서 
+		SystemController systemController = new SystemController();
 		WiseSayingController wiseSayingController = new WiseSayingController();
+		ExportController exportController = new ExportController();
 
 		while (system_status == 1) {
 			System.out.print("명령어 ) ");
@@ -38,6 +40,9 @@ public class App {
 				break;
 			case "수정":
 				wiseSayingController.modify(rq);
+				break;
+			case "추출":
+				exportController.makeHtml(rq);
 				break;
 			default:
 				System.out.println("존재하지 않는 명령어입니다");
